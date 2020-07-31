@@ -2,14 +2,15 @@ import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { Table, Col, Pagination } from 'antd';
 import op from 'object-path';
+import PropTypes from 'prop-types';
 
 import './index.less';
 
 class ResultTable extends React.Component {
   static propTypes = {
-    service: React.PropTypes.func,
-    resourceFilter: React.PropTypes.func,
-    columns: React.PropTypes.array
+    service: PropTypes.func,
+    resourceFilter: PropTypes.func,
+    columns: PropTypes.array
   };
   static defaultProps = {
     pageSize: 10,

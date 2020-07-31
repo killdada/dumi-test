@@ -3,7 +3,7 @@ import React from 'react';
 import { message, Button, InputNumber } from 'antd';
 import _ from 'underscore';
 
-import { setupMap, stringtoArray } from '../../utils/map';
+import { setupMap, stringtoArray } from '../../../utils/map';
 
 import './index.less';
 

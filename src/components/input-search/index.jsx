@@ -1,7 +1,8 @@
 import React from 'react';
 import { DatePicker, Row, Col, Input, Button, Icon } from 'antd';
+import PropTypes from 'prop-types';
 
-import { disabledDate } from '@/utils/function';
+import { disabledDate } from '../../utils/function';
 import './index.less';
 
 // eslint-disable-next-line no-unused-vars
@@ -9,7 +10,7 @@ const { RangePicker } = DatePicker;
 
 class App extends React.Component {
   static propTypes = {
-    onSearch: React.PropTypes.func
+    onSearch: PropTypes.func
   };
   static defaultProps = { laebl: '', defaultValue: '', hadTimeFilter: false };
   constructor(props) {

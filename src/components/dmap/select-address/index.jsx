@@ -4,7 +4,7 @@ import React from 'react';
 import { message, Icon, Modal, Input } from 'antd';
 import DescriptionList from 'ant-design-pro/lib/DescriptionList';
 
-import { placeSearch, regeoCode, setupMap, getLnglat } from '../../utils/map';
+import { placeSearch, regeoCode, setupMap, getLnglat } from '../../../utils/map';
 
 // eslint-disable-next-line no-unused-vars
 const { Description } = DescriptionList;

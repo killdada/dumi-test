@@ -10,6 +10,9 @@
 # production
 /dist
 /docs-dist
+/build
+/lib
+/es
 
 # misc
 .DS_Store
@@ -19,3 +22,5 @@
 .umi-production
 .umi-test
 .env.local
+
+

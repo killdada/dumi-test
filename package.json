@@ -1,7 +1,6 @@
 {
-  "private": true,
   "name": "mz-web",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -16,7 +15,6 @@
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "typings": "dist/index.d.ts",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -39,7 +37,7 @@
     "nprogress": "^0.2.0",
     "object-path": "^0.11.4",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "^16.13.1",
     "react-dnd": "^11.1.3",
     "react-dnd-html5-backend": "^11.1.3",
     "react-dom": "^16.13.1",

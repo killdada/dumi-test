@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tabs, Row, Col, Button, Input, message } from 'antd';
 import _ from 'underscore';
+import PropTypes from 'prop-types';
+
 import TableItem from './table-item.jsx';
 
 import './recycler-view.less';
@@ -22,11 +24,11 @@ function CreateRecycler(decorator) {
   class RecyclerView extends React.Component {
     static propTypes = {
       /* 入账单号列表，例：["1500434343", "1533081600"] */
-      billIdList: React.PropTypes.array,
+      billIdList: PropTypes.array,
       /* 结算项列表，例：[1, 2, 3] */
-      settlementItems: React.PropTypes.array,
+      settlementItems: PropTypes.array,
       /* 如果需要传入扩展 tab 和组件，例 {tabName: '其它差异调整',key: 9997,component: Button}，注意：key 不能和已定义类型冲突 */
-      dynamicTab: React.PropTypes.object
+      dynamicTab: PropTypes.object
     };
 
     constructor(props) {
