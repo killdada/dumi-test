@@ -1,9 +1,9 @@
 ---
 title: API
-group:
-  title: API
-  path: /api
 nav:
   title: API
-  order: 10
+  path: /api
+  order: 5
 ---
+
+## api

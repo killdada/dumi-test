@@ -4,19 +4,12 @@ import React from 'react';
 import { message, Icon, Modal, Input } from 'antd';
 import DescriptionList from 'ant-design-pro/lib/DescriptionList';
 
-import { placeSearch, regeoCode, setupMap } from '../../../lib/map';
+import { placeSearch, regeoCode, setupMap, getLnglat } from '../../utils/map';
 
 // eslint-disable-next-line no-unused-vars
 const { Description } = DescriptionList;
 
 import './index.less';
-
-export const getLnglat = (lnglat) => {
-  let { longitude, latitude } = lnglat;
-  if (!longitude || !latitude) return [0, 0];
-  let result = [longitude, latitude];
-  return result;
-};
 
 export const getNearbyAddress = (searchKey) => {
   const query = {

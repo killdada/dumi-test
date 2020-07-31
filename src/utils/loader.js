@@ -21,7 +21,7 @@ function jsLoader(url, callback, id) {
   script.setAttribute('src', url);
 
   if (callback != null) {
-    script.onload = script.onreadystatechange = function () {
+    script.onload = script.onreadystatechange = function() {
       if (script.ready) {
         return false;
       }
@@ -64,7 +64,7 @@ function cssLoader(url, callback, id) {
   link.setAttribute('href', url);
 
   if (callback != null) {
-    link.onload = link.onreadystatechange = function () {
+    link.onload = link.onreadystatechange = function() {
       if (link.ready) {
         return false;
       }
@@ -84,9 +84,4 @@ function cssLoader(url, callback, id) {
   head.appendChild(link);
 }
 
-const Loader = {
-  jsLoader,
-  cssLoader
-};
-
-export default Loader;
+export { jsLoader, cssLoader };

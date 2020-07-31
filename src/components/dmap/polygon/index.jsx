@@ -2,7 +2,8 @@
 import React from 'react';
 import { message, Button, InputNumber } from 'antd';
 import _ from 'underscore';
-import { setupMap } from '../../../lib/map';
+
+import { setupMap, stringtoArray } from '../../utils/map';
 
 import './index.less';
 
@@ -38,32 +39,6 @@ const POLYGON_STYPE_LIST = [
     blockStyle: '#ff9997'
   }
 ];
-
-export const stringtoArray = (value) => {
-  if (typeof value !== 'string') return value;
-  let res = value
-    .slice(1, -1)
-    .replace(/],/g, ']~')
-    .replace(/\[/g, '')
-    .replace(/\]/g, '')
-    .split('~');
-  res = res.map((n) => {
-    return n
-      .replace(/ /g, '')
-      .split(',')
-      .map((v) => {
-        return parseFloat(v);
-      });
-  });
-  return res;
-};
-
-export const Arraytostring = (arr) => {
-  let tmp = _.map(arr, (item) => {
-    return `[${item.toString()}]`;
-  });
-  return `[${tmp.join(',')}]`;
-};
 
 const handlePolygonPath = (amapPath) => {
   let result = _.map(amapPath, (path) => {
@@ -376,7 +351,9 @@ class DPolygon extends React.Component {
               >
                 <span
                   className="input-block"
-                  style={{ background: POLYGON_STYPE_LIST[styleIndex].blockStyle }}
+                  style={{
+                    background: POLYGON_STYPE_LIST[styleIndex].blockStyle
+                  }}
                 />
                 <span className="input-text">配送费</span>
                 <span className="input">

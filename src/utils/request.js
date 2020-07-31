@@ -2,7 +2,7 @@ import axios from 'axios';
 import NProgress from 'nprogress';
 import _ from 'underscore';
 
-import { redirect } from '../util/index';
+import { redirect } from './function';
 
 const NETWORK_ERROR_MESSAGE = '网络异常';
 const SERVER_ERROR_MESSAGE = '系统异常';

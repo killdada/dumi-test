@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const isArray =
   Array.isArray ||
-  function (obj) {
+  function(obj) {
     return toString.call(obj) === '[object Array]';
   };
 
@@ -48,7 +48,7 @@ AuthWrapper.propTypes = {
   roleId: PropTypes.number.isRequired
 };
 
-export const AuthCheck = function ({ rule, roleId }) {
+export const AuthCheck = function({ rule, roleId }) {
   const R = rule.get(roleId);
   if (R === undefined) {
     return { isShow: true, disabled: false };

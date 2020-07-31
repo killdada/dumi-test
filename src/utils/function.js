@@ -1,6 +1,49 @@
 import _ from 'underscore';
 import moment from 'moment';
 
+/**
+ * 检测对象是否为空
+ * null、undefined、'' 为 true
+ * 空对象{}、空数组[], NaN 为 true
+ * @param {any} target
+ */
+export const isEmpty = (target) => {
+  if (target === null || target === '') {
+    return true;
+  }
+  const targetString = Object.prototype.toString.call(target).split(' ')[1];
+  const type = targetString.substring(0, targetString.length - 1);
+  switch (type) {
+    case 'Object':
+      return Object.keys(target).length === 0;
+    case 'Array':
+      return target.length === 0;
+    case 'Number':
+      return isNaN(target);
+    default:
+      return false;
+  }
+};
+
+/**
+ * 获取 url 参数
+ */
+export const queryString = (key) => {
+  const reg = new RegExp('(^|&)' + key + '=([^&]*)(&|$)', 'i');
+  const { search, hash } = window.location;
+  let r = null;
+  if (search) {
+    r = search.substring(1).match(reg);
+  } else if (hash) {
+    r = hash.split('?')[1] ? hash.split('?')[1].match(reg) : null;
+  }
+  if (r) {
+    const value = decodeURIComponent(r[2]);
+    return value.endsWith('/') ? value.substring(0, value.length - 1) : value;
+  }
+  return null;
+};
+
 export function isNumber(value) {
   let reg = /^[0-9]*$/;
   if (!reg.test(value)) {
@@ -8,6 +51,10 @@ export function isNumber(value) {
   } else {
     return true;
   }
+}
+
+export function disabledDate(str) {
+  return str;
 }
 
 export function formatFileName(str) {
@@ -110,7 +157,7 @@ export function formatTimeNew(timeArray, showTime = false) {
 // 防抖
 export function debounce(fn) {
   let timeout = null;
-  return function () {
+  return function() {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
       fn.apply(this, arguments);

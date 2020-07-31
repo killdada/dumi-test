@@ -1,0 +1,34 @@
+.result-table {
+  position: relative;
+}
+.result-table h3 {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.result-table .unit-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.result-table .unit-text.hadChildren {
+  top: 38px;
+}
+.result-table .ant-table-body th,
+.result-table .ant-table-body td {
+  text-align: center;
+}
+.result-table .ant-table-body .id {
+  min-width: 50px;
+}
+.result-table .ant-table-body th {
+  font-weight: 700;
+}
+.result-table .ant-row-flex {
+  margin-bottom: 10px;
+}
+.result-table .product-name,
+.result-table .name,
+.result-table .count,
+.result-table .ticket-code {
+  max-width: 300px;
+}

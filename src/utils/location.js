@@ -1,5 +1,5 @@
-import LOCATION from '@/js/constant/location';
-import { queryString, isEmpty } from '@/js/utils/index';
+import LOCATION from '../constants/location';
+import { queryString, isEmpty } from './function';
 
 class Location {
   parseType = () => {
@@ -9,12 +9,12 @@ class Location {
 
   // 点击菜单进入
   isMenuOpen = () => {
-    return this.parseType() == LOCATION.TYPE_MENU_OPEN;
+    return this.parseType() === LOCATION.TYPE_MENU_OPEN;
   };
 
   // 页面刷新加载
   isRefreshOpen = () => {
-    return this.parseType() == LOCATION.TYPE_REFRESH_OPEN;
+    return this.parseType() === LOCATION.TYPE_REFRESH_OPEN;
   };
 
   // 保存页面 hash 路径

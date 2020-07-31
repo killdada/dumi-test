@@ -1,4 +1,6 @@
 import qs from 'querystring';
+import _ from 'underscore';
+
 import { jsLoader } from './loader';
 
 const config = {
@@ -9,7 +11,40 @@ const config = {
 const SDK = 'https://webapi.amap.com/maps?';
 const UISDK = 'https://webapi.amap.com/ui/1.0/main.js?v=1.0.11';
 
-export const setupMap = function () {
+export const stringtoArray = (value) => {
+  if (typeof value !== 'string') return value;
+  let res = value
+    .slice(1, -1)
+    .replace(/],/g, ']~')
+    .replace(/\[/g, '')
+    .replace(/\]/g, '')
+    .split('~');
+  res = res.map((n) => {
+    return n
+      .replace(/ /g, '')
+      .split(',')
+      .map((v) => {
+        return parseFloat(v);
+      });
+  });
+  return res;
+};
+
+export const Arraytostring = (arr) => {
+  let tmp = _.map(arr, (item) => {
+    return `[${item.toString()}]`;
+  });
+  return `[${tmp.join(',')}]`;
+};
+
+export const getLnglat = (lnglat) => {
+  let { longitude, latitude } = lnglat;
+  if (!longitude || !latitude) return [0, 0];
+  let result = [longitude, latitude];
+  return result;
+};
+
+export const setupMap = function() {
   if (window.AMap) {
     console.warn('amap exist');
     return;
@@ -29,10 +64,10 @@ export const setupMap = function () {
 };
 // setupMap()
 
-export const resetMap = () => {
-  /* eslint-disable-next-line */
-  this.map && this.map().destroy;
-};
+// export const resetMap = () => {
+//   /* eslint-disable-next-line */
+//   this.map && this.map().destroy;
+// };
 
 /**
  *
@@ -55,7 +90,7 @@ export const placeSearchNearby = ({ pageSize = 5, keyword = '', cpoint, radius =
         });
         placeSearch.searchNearBy(keyword, cpoint, radius, (status, result) => {
           console.log('nearby', status, result);
-          if (status == 'complete' && result.info === 'OK') {
+          if (status === 'complete' && result.info === 'OK') {
             return resolve(result.poiList.pois);
           }
           return reject([]);

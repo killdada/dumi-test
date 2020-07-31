@@ -2,8 +2,10 @@ import axios from 'axios';
 import _ from 'underscore';
 import { message, Modal } from 'antd';
 import NProgress from 'nprogress';
-import { redirect } from '../../util/redirect';
-import UserService from '../../service/user/user';
+import { redirect } from './function';
+
+const UserService = {};
+// import UserService from '../../service/user/user';
 
 const NETWORK_ERROR_MESSAGE = '网络异常';
 const SERVER_ERROR_MESSAGE = '系统异常';

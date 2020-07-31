@@ -1,8 +1,9 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { Input, TimePicker } from 'antd';
 import moment from 'moment';
-import './app.less';
+
+import './index.less';
+
 class TimePoolInput extends React.Component {
   constructor(props) {
     super(props);
@@ -10,21 +11,39 @@ class TimePoolInput extends React.Component {
     const disabled = props.disabled || false;
     this.state = {
       disabled,
-      morningTime: value.morningTime || { beginTime: undefined, endTime: undefined },
-      afternoonTime: value.afternoonTime || { beginTime: undefined, endTime: undefined }
+      morningTime: value.morningTime || {
+        beginTime: undefined,
+        endTime: undefined
+      },
+      afternoonTime: value.afternoonTime || {
+        beginTime: undefined,
+        endTime: undefined
+      }
     };
   }
   componentDidMount() {
     const value = this.state.value || {};
-    let morningTime = value.morningTime || { beginTime: undefined, endTime: undefined };
-    let afternoonTime = value.afternoonTime || { beginTime: undefined, endTime: undefined };
+    let morningTime = value.morningTime || {
+      beginTime: undefined,
+      endTime: undefined
+    };
+    let afternoonTime = value.afternoonTime || {
+      beginTime: undefined,
+      endTime: undefined
+    };
     this.setState({ morningTime, afternoonTime });
   }
   componentWillReceiveProps(nextProps) {
     const value = nextProps.value || {};
     const disabled = nextProps.disabled || false;
-    let morningTime = value.morningTime || { beginTime: undefined, endTime: undefined };
-    let afternoonTime = value.afternoonTime || { beginTime: undefined, endTime: undefined };
+    let morningTime = value.morningTime || {
+      beginTime: undefined,
+      endTime: undefined
+    };
+    let afternoonTime = value.afternoonTime || {
+      beginTime: undefined,
+      endTime: undefined
+    };
     this.setState({ morningTime, afternoonTime, disabled });
   }
   range(start, end) {
@@ -129,4 +148,5 @@ class TimePoolInput extends React.Component {
     );
   }
 }
+
 export default TimePoolInput;

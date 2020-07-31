@@ -1,7 +1,8 @@
 import React from 'react';
 import { DatePicker, Row, Col, Input, Button, Icon } from 'antd';
-import './InputSearch.less';
-import { disabledDate } from '../util/function';
+
+import { disabledDate } from '@/utils/function';
+import './index.less';
 
 // eslint-disable-next-line no-unused-vars
 const { RangePicker } = DatePicker;
@@ -30,7 +31,10 @@ class App extends React.Component {
   }
   onPeriodChange(date) {
     this.setState({
-      period: { startTime: date[0].hour(0).minutes(0), endTime: date[1].hour(23).minutes(59) }
+      period: {
+        startTime: date[0].hour(0).minutes(0),
+        endTime: date[1].hour(23).minutes(59)
+      }
     });
   }
   render() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input } from 'antd';
-import './app.less';
+
+import './index.less';
 
 class TimeZoneInput extends React.Component {
   constructor(props) {

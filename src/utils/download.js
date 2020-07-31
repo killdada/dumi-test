@@ -5,7 +5,7 @@ const response = (response, cb, filename) => {
   if (type && type.indexOf('application/json') >= 0) {
     let reader = new FileReader();
     reader.readAsText(response.data, 'utf-8');
-    reader.onload = function () {
+    reader.onload = function() {
       cb(JSON.parse(reader.result));
     };
     return false;
@@ -27,7 +27,7 @@ const response = (response, cb, filename) => {
   document.body.removeChild(elink);
 };
 
-const download = function (url, data, cb, filename) {
+const download = function(url, data, cb, filename) {
   if (data) {
     axios.post(url, data, { responseType: 'blob' }).then((res) => {
       response(res, cb, filename);

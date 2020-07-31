@@ -1,9 +1,11 @@
 import React from 'react';
 import { message, Modal, Spin, Icon } from 'antd';
 import moment from 'moment';
-import { handleDownload, convertProgressText } from '../../util/index.js';
-import Service from '../../mng/service/common/common.js';
+import { handleDownload, convertProgressText } from '../../utils/index.js';
+// import Service from '../../mng/service/common/common.js';
 import './index.less';
+
+const Service = {};
 
 const ONE_MIN = 60000;
 const CANCEL_PROGRESS = -1;
@@ -80,9 +82,14 @@ class AsyncDownload extends React.Component {
       // download let date =
       moment().format('YYYYMMDDHHmmss');
       // eslint-disable-next-line no-undef
-      handleDownload(`/api/download/public/export-data`, `${this.state.fileName}${date}`, {
-        exportToken
-      });
+      handleDownload(
+        `/api/download/public/export-data`,
+        // eslint-disable-next-line no-undef
+        `${this.state.fileName}${date}`,
+        {
+          exportToken
+        }
+      );
     }
   }
   render() {

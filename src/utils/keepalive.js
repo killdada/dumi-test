@@ -1,4 +1,4 @@
-export const keepAlive = function (arr) {
+export const keepAlive = function(arr) {
   arr.forEach((item) => {
     if (item) {
       window.localStorage.setItem(item.key, item.value);
@@ -6,7 +6,7 @@ export const keepAlive = function (arr) {
   });
 };
 
-export const getAlive = function (arr) {
+export const getAlive = function(arr) {
   // await arr[0].callback(JSON.parse(window.localStorage.getItem(arr[0].data)))
   // await arr[1].callback(JSON.parse(window.localStorage.getItem(arr[1].data)))
   arr.forEach((item, index) => {
@@ -20,7 +20,7 @@ export const getAlive = function (arr) {
   });
 };
 
-export const removeAlive = function (arr) {
+export const removeAlive = function(arr) {
   arr.forEach((item) => {
     if (item) {
       window.localStorage.removeItem(item);

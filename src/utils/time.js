@@ -48,3 +48,16 @@ export function isSettlementDate(start, end) {
 export function timestampToMoment(timestamp, format = 'YYYY-MMM-DD') {
   return timestamp ? moment(new Date(timestamp)) : '';
 }
+
+export function timeToDay(value) {
+  let time = value && value > 0 ? moment.unix(value).format('YYYY-MM-DD') : '';
+  return time;
+}
+export function timeToMinute(value) {
+  let time = value && value > 0 ? moment.unix(value).format('YYYY-MM-DD HH:mm') : '';
+  return time;
+}
+
+export function timeToDayNoStuff(value) {
+  return moment.unix(value).format('YYYYMMDD');
+}

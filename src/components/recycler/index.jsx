@@ -1,12 +1,17 @@
-import CreateRecycler, { PLATFORM } from './RecyclerView';
+import CreateRecycler from './recycler-view.jsx';
 import {
   priceConversion,
   resolveOrderType,
   timeToMinute,
   resolveServiceType,
   filterRequestArgs
-} from '../../util/function';
-import Service from '../../service/settlement/bill';
+} from '../../utils/index';
+
+import { PLATFORM } from './const';
+
+const Service = {};
+// import Service from '../../service/settlement/bill';
+
 function decorator(target) {
   target.prototype.$platform = PLATFORM.scm;
   target.prototype.$ToolUtil = {
@@ -24,4 +29,5 @@ function decorator(target) {
     getCardConsumeList: Service.cardConsumeList
   };
 }
+
 export default CreateRecycler(decorator);

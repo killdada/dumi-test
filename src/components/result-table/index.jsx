@@ -2,7 +2,8 @@ import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { Table, Col, Pagination } from 'antd';
 import op from 'object-path';
-import './ResultTable.less';
+
+import './index.less';
 
 class ResultTable extends React.Component {
   static propTypes = {

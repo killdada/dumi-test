@@ -2,15 +2,9 @@
 import React from 'react';
 import { Icon, Table, Col, Pagination } from 'antd';
 
-import {
-  TAB_ORDER,
-  TAB_SERVICE,
-  TAB_FEE,
-  TAB_COUPON_CONSUME,
-  TAB_CARD_CONSUME
-} from './RecyclerView';
+import { TAB_ORDER, TAB_SERVICE, TAB_FEE, TAB_COUPON_CONSUME, TAB_CARD_CONSUME } from './const';
 
-import './TableItem.less';
+import './table-item.less';
 
 function renderContent(value, record, index) {
   const obj = {
