@@ -1,4 +1,5 @@
 import React from 'react';
+import { SearchOutlined } from '@ant-design/icons';
 import { Tabs, Row, Col, Button, Input, message } from 'antd';
 import _ from 'underscore';
 import PropTypes from 'prop-types';
@@ -398,7 +399,11 @@ function CreateRecycler(decorator) {
                       </Col>
                     ) : (
                       <Col span={6}>
-                        <Button shape="circle" icon="search" onClick={this.handleSearch} />
+                        <Button
+                          shape="circle"
+                          icon={<SearchOutlined />}
+                          onClick={this.handleSearch}
+                        />
                       </Col>
                     )}
                   </Row>

@@ -1,5 +1,6 @@
 /* eslint-disable react/no-string-refs */
 import React from 'react';
+import { DeleteOutlined, PlusOutlined, ReloadOutlined, SaveOutlined } from '@ant-design/icons';
 import { message, Button, InputNumber } from 'antd';
 import _ from 'underscore';
 
@@ -306,7 +307,7 @@ class DPolygon extends React.Component {
           <div className="dmap-tools-top">
             <Button
               key="reload"
-              icon="reload"
+              icon={<ReloadOutlined />}
               onClick={() => {
                 this.reloadMap();
               }}
@@ -317,7 +318,7 @@ class DPolygon extends React.Component {
               ? [
                   <Button
                     key="delete"
-                    icon="delete"
+                    icon={<DeleteOutlined />}
                     type="danger"
                     onClick={() => {
                       this.delPloygen();
@@ -325,7 +326,7 @@ class DPolygon extends React.Component {
                   />,
                   <Button
                     key="save"
-                    icon="save"
+                    icon={<SaveOutlined />}
                     type="primary"
                     onClick={() => {
                       this.onCloseEdit();
@@ -370,7 +371,7 @@ class DPolygon extends React.Component {
           })}
           {!disabled && polygonArrLen < MAX_COUNT ? (
             <Button
-              icon="plus"
+              icon={<PlusOutlined />}
               size="small"
               shape="circle"
               className="dmap-input"

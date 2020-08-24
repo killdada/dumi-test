@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-script-url */
 import React from 'react';
-import { Icon, Table, Col, Pagination } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
+import { Table, Col, Pagination } from 'antd';
 
 import { TAB_ORDER, TAB_SERVICE, TAB_FEE, TAB_COUPON_CONSUME, TAB_CARD_CONSUME } from './const';
 
@@ -238,7 +239,7 @@ class TableItem extends React.Component {
                 onClick={() => window.open(text)}
               >
                 {this.resolveAttachment(text)}
-                <Icon className="margin-left-4" type="download" theme="outlined" />
+                <DownloadOutlined className="margin-left-4" />
               </a>
             </div>
           ) : (

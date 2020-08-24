@@ -1,7 +1,8 @@
 /* eslint-disable react/no-string-refs */
 import _ from 'underscore';
 import React from 'react';
-import { message, Icon, Modal, Input } from 'antd';
+import { EnvironmentFilled } from '@ant-design/icons';
+import { message, Modal, Input } from 'antd';
 import DescriptionList from 'ant-design-pro/lib/DescriptionList';
 
 import { placeSearch, regeoCode, setupMap, getLnglat } from '../../../utils/map';
@@ -214,7 +215,7 @@ class DSelectAddress extends React.Component {
             }
           }}
         >
-          <Icon type="environment" theme="filled" />
+          <EnvironmentFilled />
           <span>{name ? `${name} 附近` : '点击选择地图位置'}</span>
         </span>
 

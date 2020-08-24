@@ -1,5 +1,6 @@
 import React from 'react';
-import { DatePicker, Row, Col, Input, Button, Icon } from 'antd';
+import { CloseCircleOutlined, SearchOutlined } from '@ant-design/icons';
+import { DatePicker, Row, Col, Input, Button } from 'antd';
 import PropTypes from 'prop-types';
 
 import { disabledDate } from '../../utils/function';
@@ -50,13 +51,11 @@ class App extends React.Component {
             <Input
               value={this.state.input}
               onChange={this.onInputChange}
-              suffix={
-                this.state.input ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null
-              }
+              suffix={this.state.input ? <CloseCircleOutlined onClick={this.emitEmpty} /> : null}
             />
           </Col>
           <Col span={1}>
-            <Button shape="circle" icon="search" onClick={this.onSearch} />
+            <Button shape="circle" icon={<SearchOutlined />} onClick={this.onSearch} />
           </Col>
         </Row>
         {hadTimeFilter ? (

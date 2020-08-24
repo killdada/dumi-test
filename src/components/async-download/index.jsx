@@ -1,5 +1,6 @@
 import React from 'react';
-import { message, Modal, Spin, Icon } from 'antd';
+import { CheckCircleFilled, CloseCircleFilled } from '@ant-design/icons';
+import { message, Modal, Spin } from 'antd';
 import moment from 'moment';
 import { handleDownload, convertProgressText } from '../../utils/index.js';
 // import Service from '../../mng/service/common/common.js';
@@ -108,17 +109,9 @@ class AsyncDownload extends React.Component {
               {this.state.progressStatus === 0 ? (
                 <Spin size="large" />
               ) : this.state.progressStatus === 1 ? (
-                <Icon
-                  type="check-circle"
-                  theme="filled"
-                  style={{ fontSize: '45px', color: '#52c41a' }}
-                />
+                <CheckCircleFilled style={{ fontSize: '45px', color: '#52c41a' }} />
               ) : (
-                <Icon
-                  type="close-circle"
-                  theme="filled"
-                  style={{ fontSize: '45px', color: '#f5222d' }}
-                />
+                <CloseCircleFilled style={{ fontSize: '45px', color: '#f5222d' }} />
               )}
               <div className="progress-text">
                 {convertProgressText(this.state.progressStatus)}
