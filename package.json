@@ -13,19 +13,8 @@
     "test:coverage": "umi-test --coverage",
     "lint": "eslint --ext .js,.jsx src"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
-  },
+  "main": "lib/index.js",
+  "module": "es/index.esm.js",
   "dependencies": {
     "@ant-design/compatible": "^1.0.5",
     "@ant-design/icons": "^4.2.2",

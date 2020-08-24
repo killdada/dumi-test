@@ -29,7 +29,21 @@ export function setItem(key, value) {
   return set(key, value);
 }
 
-export default {
+export function removeItem(key) {
+  return store.removeItem(key);
+}
+
+export function clear(key) {
+  return store.clear();
+}
+
+const localStorage = {
   getItem,
-  setItem
+  setItem,
+  removeItem,
+  clear
 };
+
+export { localStorage };
+
+export default localStorage;

@@ -2,7 +2,7 @@
  *
  * @param {*} key
  */
-export const getCookieByKey = function (key) {
+export const getCookieByKey = function(key) {
   if (document.cookie.length > 0) {
     let arr = document.cookie.split('; ');
     for (let i = 0; i < arr.length; i++) {

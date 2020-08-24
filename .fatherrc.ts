@@ -6,16 +6,16 @@
 
 const options = {
   // 入口
-  entry: ['src/index.js', 'src/utils/index.js'],
-  // 每个入口生成不同的文件名
-  overridesByEntry: {
-    'src/index.js': {
-      file: 'index'
-    },
-    'src/utils/index.js': {
-      file: 'utils'
-    }
-  },
+  // entry: ['src/index.js', 'src/utils/index.js'],
+  // // 每个入口生成不同的文件名
+  // overridesByEntry: {
+  //   'src/index.js': {
+  //     file: 'index'
+  //   },
+  //   'src/utils/index.js': {
+  //     file: 'utils'
+  //   }
+  // },
   // 增加支持的扩展后缀
   nodeResolveOpts: {
     extensions: ['.mjs', '.js', '.json', '.node', 'jsx']

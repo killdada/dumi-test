@@ -22,8 +22,8 @@ function xss(str) {
  * @returns {*} 获取到的参数值或者由所有参数组成完整对象
  */
 function getQuery(name = null, queryStr = null, unxss = false, undecode = false) {
-  const searchArr = location.href.split('?');
-  const str = queryStr || searchArr[1];
+  const searchArr = queryStr || window.location.href;
+  const str = searchArr.split('?')[1];
   if (!str) return name ? undefined : {};
 
   let tempArr;
