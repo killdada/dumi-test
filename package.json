@@ -15,6 +15,17 @@
   },
   "main": "lib/index.js",
   "module": "es/index.esm.js",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
   "dependencies": {
     "@ant-design/compatible": "^1.0.5",
     "@ant-design/icons": "^4.2.2",
