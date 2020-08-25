@@ -44,13 +44,13 @@ export const getLnglat = (lnglat) => {
   return result;
 };
 
-export const setupMap = function() {
+export const setupMap = function(configs = config) {
   if (window.AMap) {
     console.warn('amap exist');
     return;
   }
   console.warn('amap loading...');
-  jsLoader(`${SDK}${qs.stringify(config)}`, (err, Script) => {
+  jsLoader(`${SDK}${qs.stringify(configs)}`, (err, Script) => {
     if (err) {
       return console.warn('amap sdk load fail');
     }

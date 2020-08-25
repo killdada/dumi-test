@@ -61,3 +61,31 @@ export function timeToMinute(value) {
 export function timeToDayNoStuff(value) {
   return moment.unix(value).format('YYYYMMDD');
 }
+
+export function deepClone(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+export function formatTimeNew(timeArray, showTime = false) {
+  if (!timeArray || timeArray.length === 0) return [undefined, undefined];
+  let beginTime;
+  let endTime;
+  if (showTime) {
+    beginTime = timeArray[0].format('YYYY-MM-DD HH:mm:ss');
+    endTime = timeArray[1].format('YYYY-MM-DD HH:mm:ss');
+  } else {
+    beginTime = timeArray[0].format('YYYY-MM-DD') + ' 00:00:00';
+    endTime = timeArray[1].format('YYYY-MM-DD') + ' 23:59:59';
+  }
+  return [moment(beginTime).unix(), moment(endTime).unix()];
+}
+// 防抖
+export function debounce(fn) {
+  let timeout = null;
+  return function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      fn.apply(this, arguments);
+    }, 500);
+  };
+}
