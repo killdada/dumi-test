@@ -1,4 +1,4 @@
-import _ from 'underscore';
+import _ from 'lodash';
 import cloneDeep from 'lodash/cloneDeep';
 
 export function obj2key(obj, keys) {

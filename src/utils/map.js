@@ -1,5 +1,5 @@
 import qs from 'querystring';
-import _ from 'underscore';
+import _ from 'lodash';
 
 import { jsLoader } from './loader';
 

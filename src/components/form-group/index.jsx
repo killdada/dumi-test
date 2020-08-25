@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form } from '@ant-design/compatible';
-import '@ant-design/compatible/assets/index.css';
 import { message, Select, Input, TreeSelect, Row, Col } from 'antd';
+import { Form } from '@ant-design/compatible';
+
+import '@ant-design/compatible/assets/index.css';
 import './style/index.less';
 
 // eslint-disable-next-line no-unused-vars
