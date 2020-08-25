@@ -21,6 +21,7 @@ const options = {
     extensions: ['.mjs', '.js', '.json', '.node', 'jsx']
   },
   extraBabelPlugins: [
+    'lodash',
     [
       'babel-plugin-import',
       {

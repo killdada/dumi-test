@@ -4,7 +4,7 @@ import { message, Select, Input, TreeSelect, Row, Col } from 'antd';
 import { Form } from '@ant-design/compatible';
 
 import '@ant-design/compatible/assets/index.css';
-import './style/index.less';
+import './index.less';
 
 // eslint-disable-next-line no-unused-vars
 const FormItem = Form.Item;

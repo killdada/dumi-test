@@ -5,7 +5,6 @@ export * from './keyboard';
 export * from './loader';
 export * from './localstorage-utils';
 export * from './location';
-export * from './map';
 export * from './price';
 export * from './protocol-adaptive';
 export * from './regexp';
