@@ -1,6 +1,6 @@
 {
   "name": "mz-web",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -13,7 +13,7 @@
     "test:coverage": "umi-test --coverage",
     "lint": "eslint --ext .js,.jsx src"
   },
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "module": "es/index.esm.js",
   "gitHooks": {
     "pre-commit": "lint-staged"
